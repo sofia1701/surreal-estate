@@ -7,7 +7,7 @@ export default function Navbar() {
   return (
     <div className="navbar">
       <Link to="/">
-        <img className="logo" alt="logo" src={logo} />
+        <img data-testid="logo" className="logo" alt="logo" src={logo} />
       </Link>
       <ul className="navbar-links">
         <li>

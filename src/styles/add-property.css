@@ -1,0 +1,20 @@
+.add-property {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: 10px;
+}
+
+.form-add-property {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-fields {
+  margin: 3px;
+}
+
+.add-button {
+  width: 70px
+}
