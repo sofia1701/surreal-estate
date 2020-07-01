@@ -1,6 +1,12 @@
 body {
   font-family: 'Raleway', sans-serif;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   background-color: #DDDDDD;
+}
+
+.app {
+  display: flex;
+  flex-wrap: wrap;
 }

@@ -1,10 +1,11 @@
-import React from 'react';
-import '../styles/App.css';
+import React from "react";
+import Navbar from "./Navbar";
+import "../styles/App.css";
 
 function App() {
   return (
-    <div className="App">
-      <h2>Surreal estate</h2>
+    <div className="app">
+      <Navbar />
     </div>
   );
 }
