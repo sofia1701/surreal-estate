@@ -15,9 +15,11 @@ exports[`AddProperty renders correctly 1`] = `
         Title
         <input
           class="input-fields"
+          data-testid="title-id"
           id="title"
           name="title"
           placeholder="Add a title..."
+          type="text"
           value=""
         />
       </label>
@@ -99,6 +101,103 @@ exports[`AddProperty renders correctly 1`] = `
             Bungalow
           </option>
         </select>
+      </label>
+      <label
+        for="bedrooms"
+      >
+        Bedrooms
+        <select
+          class="input-fields"
+          data-testid="select-bedroom-id"
+          id="bedrooms"
+          name="bedrooms"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+          <option
+            value="3"
+          >
+            3
+          </option>
+          <option
+            value="4"
+          >
+            4
+          </option>
+          <option
+            value="5+"
+          >
+            5+
+          </option>
+        </select>
+      </label>
+      <label
+        for="bathrooms"
+      >
+        Bathrooms
+        <select
+          class="input-fields"
+          data-testid="select-bathrooms-id"
+          id="bathrooms"
+          name="bathrooms"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+          <option
+            value="3"
+          >
+            3
+          </option>
+          <option
+            value="4+"
+          >
+            4+
+          </option>
+        </select>
+      </label>
+      <label
+        for="price"
+      >
+        Price (£)
+        <input
+          class="input-fields"
+          data-testid="price-id"
+          id="price"
+          name="price"
+          placeholder="Add a price..."
+          type="number"
+          value=""
+        />
+      </label>
+      <label
+        for="email"
+      >
+        Email
+        <input
+          class="input-fields"
+          data-testid="email-id"
+          id="email"
+          name="email"
+          placeholder="Add an email..."
+          type="email"
+          value=""
+        />
       </label>
       <button
         class="add-button"

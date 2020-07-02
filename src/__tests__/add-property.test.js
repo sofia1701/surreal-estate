@@ -13,22 +13,56 @@ describe("AddProperty", () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it("captures user input correctly", () => {
-    const { getByRole } = render(
+  it("captures user title input correctly", () => {
+    const { getByRole, getByTestId } = render(
       <MemoryRouter>
         <AddProperty />
       </MemoryRouter>
     );
 
-    const textbox = getByRole("textbox");
+    const title = getByTestId("title-id");
     const button = getByRole("button", { name: /add/i });
 
-    fireEvent.change(textbox, {
+    fireEvent.change(title, {
       target: { value: "3 bedroom flat" },
     });
     fireEvent.click(button);
 
-    expect(textbox.value).toBe("3 bedroom flat");
+    expect(title.value).toBe("3 bedroom flat");
+  });
+
+  it("captures user price input correctly", () => {
+    const { getByRole, getByTestId } = render(
+      <MemoryRouter>
+        <AddProperty />
+      </MemoryRouter>
+    );
+    const price = getByTestId("price-id");
+    const button = getByRole("button", { name: /add/i });
+
+    fireEvent.change(price, {
+      target: { value: "10000" },
+    });
+    fireEvent.click(button);
+
+    expect(price.value).toBe("10000");
+  });
+
+  it("captures user email input correctly", () => {
+    const { getByRole, getByTestId } = render(
+      <MemoryRouter>
+        <AddProperty />
+      </MemoryRouter>
+    );
+    const email = getByTestId("email-id");
+    const button = getByRole("button", { name: /add/i });
+
+    fireEvent.change(email, {
+      target: { value: "sofia-dionisio@mail.com" },
+    });
+    fireEvent.click(button);
+
+    expect(email.value).toBe("sofia-dionisio@mail.com");
   });
 
   it("captures user select city correctly", () => {
@@ -60,4 +94,5 @@ describe("AddProperty", () => {
     expect(getByText("Detached")).toBeInTheDocument();
     expect(getByTestId("form-id")).toHaveFormValues({ type: "Detached" });
   });
+
 });

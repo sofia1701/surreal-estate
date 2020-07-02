@@ -35,6 +35,7 @@ export default function AddProperty() {
         <label htmlFor="title">
           Title
           <input
+            data-testid="title-id"
             className="input-fields"
             type="text"
             placeholder="Add a title..."
@@ -115,6 +116,7 @@ export default function AddProperty() {
         <label htmlFor="price">
           Price (£)
           <input
+            data-testid="price-id"
             className="input-fields"
             placeholder="Add a price..."
             type="number"
@@ -127,6 +129,7 @@ export default function AddProperty() {
         <label htmlFor="email">
           Email
           <input
+            data-testid="email-id"
             className="input-fields"
             placeholder="Add an email..."
             type="email"
@@ -136,7 +139,6 @@ export default function AddProperty() {
             onChange={handleFieldChange}
           />
         </label>
-
         <button className="add-button" type="submit">
           Add
         </button>
