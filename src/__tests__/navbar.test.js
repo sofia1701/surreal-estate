@@ -12,4 +12,20 @@ describe("Navbar", () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
+  it("renders the correct specs", () => {
+    const { getByTestId } = render(
+      <MemoryRouter>
+        <Navbar />
+      </MemoryRouter>
+    );
+    const logo = getByTestId("logo-id");
+    expect(logo).toBeInTheDocument();
+
+    const viewProperties = getByTestId("view-properties-id");
+    expect(viewProperties).toHaveTextContent("View Properties");
+
+    const addProperty = getByTestId("add-property-id");
+    expect(addProperty).toHaveTextContent("Add a Property");
+  });
 });

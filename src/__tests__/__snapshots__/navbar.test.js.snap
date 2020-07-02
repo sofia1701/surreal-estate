@@ -11,7 +11,7 @@ exports[`Navbar renders correctly 1`] = `
       <img
         alt="logo"
         class="logo"
-        data-testid="logo"
+        data-testid="logo-id"
         src="nav-logo.png"
       />
     </a>
@@ -21,6 +21,7 @@ exports[`Navbar renders correctly 1`] = `
       <li>
         <a
           class="navbar-links-item"
+          data-testid="view-properties-id"
           href="/"
         >
           View Properties
@@ -29,6 +30,7 @@ exports[`Navbar renders correctly 1`] = `
       <li>
         <a
           class="navbar-links-item"
+          data-testid="add-property-id"
           href="/add-property"
         >
           Add a Property

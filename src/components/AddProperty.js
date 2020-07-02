@@ -23,7 +23,11 @@ export default function AddProperty() {
 
   return (
     <div className="add-property">
-      <form className="form-add-property" onSubmit={handleAddProperty}>
+      <form
+        data-testid="form-id"
+        className="form-add-property"
+        onSubmit={handleAddProperty}
+      >
         <label htmlFor="title">
           Title
           <input
@@ -38,6 +42,7 @@ export default function AddProperty() {
         <label htmlFor="city">
           City
           <select
+            data-testid="select-city-id"
             className="input-fields"
             id="city"
             name="city"
@@ -50,9 +55,10 @@ export default function AddProperty() {
             <option value="Liverpool">Liverpool</option>
           </select>
         </label>
-        <label htmlFor="city">
+        <label htmlFor="type">
           Type
           <select
+            data-testid="select-type-id"
             className="input-fields"
             id="type"
             name="type"

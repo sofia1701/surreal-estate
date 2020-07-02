@@ -7,16 +7,24 @@ export default function Navbar() {
   return (
     <div className="navbar">
       <Link to="/">
-        <img data-testid="logo" className="logo" alt="logo" src={logo} />
+        <img data-testid="logo-id" className="logo" alt="logo" src={logo} />
       </Link>
       <ul className="navbar-links">
         <li>
-          <Link to="/" className="navbar-links-item">
+          <Link
+            to="/"
+            className="navbar-links-item"
+            data-testid="view-properties-id"
+          >
             View Properties
           </Link>
         </li>
         <li>
-          <Link to="/add-property" className="navbar-links-item">
+          <Link
+            to="/add-property"
+            className="navbar-links-item"
+            data-testid="add-property-id"
+          >
             Add a Property
           </Link>
         </li>
