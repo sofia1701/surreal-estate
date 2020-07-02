@@ -3,11 +3,18 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #DDDDDD;
   color: #12100E;
 }
 
 .app {
   display: flex;
   flex-wrap: wrap;
+  background-color: #DDDDDD;
+}
+
+@media only screen and (min-width: 961px) {
+  .app {
+    width: 970px;
+    margin: 0 auto;
+  }
 }

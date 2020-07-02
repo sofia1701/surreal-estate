@@ -1,14 +1,17 @@
 .add-property {
   padding: 10px;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
   margin-left: 10px;
+  width: 100%;
 }
 
 .form-add-property {
   display: flex;
   flex-direction: column;
+  width: 50%;
+}
+
+label {
+  display: grid;
 }
 
 .input-fields {
@@ -16,5 +19,10 @@
 }
 
 .add-button {
-  width: 70px
+  margin: 10px 10px 10px 10px;
+  width: 40%;
+}
+
+@media only screen and (min-width: 961px) {
+  
 }
