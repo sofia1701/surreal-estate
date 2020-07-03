@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Alert from "./Alert";
 import "../styles/add-property.css";
 
 export default function AddProperty() {
@@ -13,22 +14,36 @@ export default function AddProperty() {
       price: "",
       email: "",
     },
+    alert: {
+      message: "",
+      isSuccess: false,
+    },
   };
 
   const [fields, setFields] = useState(initialState.fields);
+  const [alert, setAlert] = useState(initialState.alert);
 
   const handleAddProperty = (event) => {
     event.preventDefault();
+    setAlert({ message: "", isSuccess: false });
 
     axios
       .post("http://localhost:4000/api/v1/PropertyListing/", {
         ...fields,
       })
       .then((response) => {
-        console.log(response);
+        //console.log(response);
+        setAlert({
+          message: "Property added.",
+          isSuccess: true,
+        });
       })
       .catch((error) => {
-        console.log(error);
+        //console.log(error);
+        setAlert({
+          message: "Server error. Please try again later.",
+          isSuccess: false,
+        });
       });
   };
 
@@ -43,11 +58,12 @@ export default function AddProperty() {
         className="form-add-property"
         onSubmit={handleAddProperty}
       >
+        <Alert message={alert.message} success={alert.isSuccess} />
         <label htmlFor="title">
           Title
           <input
             data-testid="title-id"
-            className="input-fields"
+            className="input-title"
             type="text"
             placeholder="Add a title..."
             id="title"
@@ -60,7 +76,7 @@ export default function AddProperty() {
           City
           <select
             data-testid="select-city-id"
-            className="input-fields"
+            className="input-city"
             id="city"
             name="city"
             value={fields.city}
@@ -76,7 +92,7 @@ export default function AddProperty() {
           Type
           <select
             data-testid="select-type-id"
-            className="input-fields"
+            className="input-type"
             id="type"
             name="type"
             value={fields.type}
@@ -95,7 +111,7 @@ export default function AddProperty() {
           Bedrooms
           <select
             data-testid="select-bedroom-id"
-            className="input-fields"
+            className="input-bedrooms"
             id="bedrooms"
             name="bedrooms"
             value={fields.bedrooms}
@@ -112,7 +128,7 @@ export default function AddProperty() {
           Bathrooms
           <select
             data-testid="select-bathrooms-id"
-            className="input-fields"
+            className="input-bathrooms"
             id="bathrooms"
             name="bathrooms"
             value={fields.bathrooms}
@@ -128,7 +144,7 @@ export default function AddProperty() {
           Price (£)
           <input
             data-testid="price-id"
-            className="input-fields"
+            className="input-price"
             placeholder="Add a price..."
             type="number"
             id="price"
@@ -141,7 +157,7 @@ export default function AddProperty() {
           Email
           <input
             data-testid="email-id"
-            className="input-fields"
+            className="input-email"
             placeholder="Add an email..."
             type="email"
             id="email"
@@ -150,9 +166,11 @@ export default function AddProperty() {
             onChange={handleFieldChange}
           />
         </label>
-        <button className="add-button" type="submit">
-          Add
-        </button>
+        <div className="button">
+          <button className="add-button" type="submit">
+            Add
+          </button>
+        </div>
       </form>
     </div>
   );

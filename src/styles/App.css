@@ -4,12 +4,14 @@ body {
   padding: 0;
   box-sizing: border-box;
   color: #12100E;
+  background-color:white;
 }
 
 .app {
   display: flex;
   flex-wrap: wrap;
-  background-color: #DDDDDD;
+  background-color: white;
+  
 }
 
 @media only screen and (min-width: 961px) {

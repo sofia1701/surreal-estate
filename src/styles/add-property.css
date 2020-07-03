@@ -1,28 +1,78 @@
 .add-property {
   padding: 10px;
-  margin-left: 10px;
   width: 100%;
+  background-color:  rgb(245, 234, 239);
 }
 
 .form-add-property {
   display: flex;
   flex-direction: column;
-  width: 50%;
 }
 
 label {
+  margin-top: 10px;
   display: grid;
 }
 
-.input-fields {
-  margin: 3px;
+.button {
+  text-align: center;
+  margin: 5px;
 }
 
 .add-button {
-  margin: 10px 10px 10px 10px;
-  width: 40%;
+  margin: 5px;
+  width: 50%;
+  background-color:  	rgb(93, 9, 104);
+  color: white;
+  padding: 5px;
 }
 
 @media only screen and (min-width: 961px) {
+  .add-property {
+    width: 970px;
+  }
+  .input-title {
+    width: 40%;
+    margin: 3px
+  }
   
+  .input-city {
+    width: 15%;
+    margin: 3px
+  }
+  
+  .input-type {
+    width: 15%;
+    margin: 3px
+  }
+  
+  .input-bedrooms {
+    width: 15%;
+    margin: 3px
+  }
+  
+  .input-bathrooms {
+    width: 15%;
+    margin: 3px
+  }
+  
+  .input-price {
+    width: 20%;
+    margin: 3px
+  }
+  
+  .input-email {
+    width: 40%;
+    margin: 3px
+  }
+
+  .button {
+    text-align: left;
+    
+  }
+
+  .add-button {
+    margin: 3px;
+    width: 15%;
+  }
 }

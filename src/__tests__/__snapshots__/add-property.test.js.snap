@@ -14,7 +14,7 @@ exports[`AddProperty renders correctly 1`] = `
       >
         Title
         <input
-          class="input-fields"
+          class="input-title"
           data-testid="title-id"
           id="title"
           name="title"
@@ -28,7 +28,7 @@ exports[`AddProperty renders correctly 1`] = `
       >
         City
         <select
-          class="input-fields"
+          class="input-city"
           data-testid="select-city-id"
           id="city"
           name="city"
@@ -60,7 +60,7 @@ exports[`AddProperty renders correctly 1`] = `
       >
         Type
         <select
-          class="input-fields"
+          class="input-type"
           data-testid="select-type-id"
           id="type"
           name="type"
@@ -107,7 +107,7 @@ exports[`AddProperty renders correctly 1`] = `
       >
         Bedrooms
         <select
-          class="input-fields"
+          class="input-bedrooms"
           data-testid="select-bedroom-id"
           id="bedrooms"
           name="bedrooms"
@@ -144,7 +144,7 @@ exports[`AddProperty renders correctly 1`] = `
       >
         Bathrooms
         <select
-          class="input-fields"
+          class="input-bathrooms"
           data-testid="select-bathrooms-id"
           id="bathrooms"
           name="bathrooms"
@@ -176,7 +176,7 @@ exports[`AddProperty renders correctly 1`] = `
       >
         Price (£)
         <input
-          class="input-fields"
+          class="input-price"
           data-testid="price-id"
           id="price"
           name="price"
@@ -190,7 +190,7 @@ exports[`AddProperty renders correctly 1`] = `
       >
         Email
         <input
-          class="input-fields"
+          class="input-email"
           data-testid="email-id"
           id="email"
           name="email"
@@ -199,12 +199,16 @@ exports[`AddProperty renders correctly 1`] = `
           value=""
         />
       </label>
-      <button
-        class="add-button"
-        type="submit"
+      <div
+        class="button"
       >
-        Add
-      </button>
+        <button
+          class="add-button"
+          type="submit"
+        >
+          Add
+        </button>
+      </div>
     </form>
   </div>
 </DocumentFragment>
