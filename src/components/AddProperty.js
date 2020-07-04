@@ -52,7 +52,7 @@ export default function AddProperty() {
   };
 
   return (
-    <div className="add-property">
+    <div className="add-property" data-testid="add-property-id">
       <form
         data-testid="form-id"
         className="form-add-property"

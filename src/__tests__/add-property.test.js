@@ -1,78 +1,148 @@
 import React from "react";
-import { render, fireEvent } from "@testing-library/react";
+import { render, fireEvent, wait } from "@testing-library/react";
 import AddProperty from "../components/AddProperty";
 
 describe("AddProperty", () => {
-  it("renders correctly", () => {
-    const { asFragment } = render(<AddProperty />);
-    expect(asFragment()).toMatchSnapshot();
+  const mockHandleAddProperty = jest.fn();
+  const mockHandleFieldChange = jest.fn();
+  const mockFormData = {
+    title: "5 Bedroom House",
+    city: "Leeds",
+    type: "Detached",
+    bedrooms: 5,
+    bathrooms: 3,
+    price: 650,
+    email: "john@mail.com",
+  };
+
+  it("renders correctly", async () => {
+    const { asFragment } = render(
+      <AddProperty
+        handleAddProperty={mockHandleAddProperty}
+        handleFieldChange={mockHandleFieldChange}
+        form={mockFormData}
+      />
+    );
+    await wait(() => {
+      expect(asFragment()).toMatchSnapshot();
+    });
   });
 
-  it("captures user title input correctly", () => {
-    const { getByRole, getByTestId } = render(<AddProperty />);
+  it("submits the title input", () => {
+    const { getByLabelText } = render(
+      <AddProperty
+        mockHandleAddProperty={mockHandleAddProperty}
+        handleFieldChange={mockHandleFieldChange}
+        title={mockFormData.title}
+        city={mockFormData.city}
+      />
+    );
 
-    const title = getByTestId("title-id");
-    const button = getByRole("button", { name: /add/i });
+    const title = getByLabelText("Title");
 
     fireEvent.change(title, {
-      target: { value: "3 bedroom flat" },
+      target: { value: mockFormData.title },
     });
-    fireEvent.click(button);
 
-    expect(title.value).toBe("3 bedroom flat");
+    expect(title.value).toBe(mockFormData.title);
   });
 
-  it("captures user selected city correctly", () => {
-    const { getByRole, getByTestId } = render(<AddProperty />);
+  it("submits the city input", () => {
+    const { getByLabelText } = render(
+      <AddProperty
+        mockHandleAddProperty={mockHandleAddProperty}
+        handleFieldChange={mockHandleFieldChange}
+      />
+    );
 
-    const city = getByTestId("select-city-id");
-    const button = getByRole("button", { name: /add/i });
+    const city = getByLabelText("City");
+    expect(city.value).toBe("Manchester");
 
     fireEvent.change(city, {
-      target: { value: "Liverpool" },
+      target: { value: "Leeds" },
     });
-    fireEvent.click(button);
 
-    expect(city.value).toBe("Liverpool");
+    expect(city.value).toBe("Leeds");
   });
 
-  it("captures user selected type correctly", () => {
-    const { getByRole, getByTestId } = render(<AddProperty />);
-
-    const type = getByTestId("select-type-id");
-    const button = getByRole("button", { name: /add/i });
+  it("submits the type input", () => {
+    const { getByLabelText } = render(
+      <AddProperty
+        mockHandleAddProperty={mockHandleAddProperty}
+        handleFieldChange={mockHandleFieldChange}
+      />
+    );
+    const type = getByLabelText("Type");
+    expect(type.value).toBe("Flat");
 
     fireEvent.change(type, {
-      target: { value: "Flat" },
+      target: { value: "Detached" },
     });
-    fireEvent.click(button);
 
-    expect(type.value).toBe("Flat");
+    expect(type.value).toBe("Detached");
   });
 
-  it("captures user price input correctly", () => {
-    const { getByRole, getByTestId } = render(<AddProperty />);
-    const price = getByTestId("price-id");
-    const button = getByRole("button", { name: /add/i });
+  it("submits the bedrooms input", () => {
+    const { getByLabelText } = render(
+      <AddProperty
+        mockHandleAddProperty={mockHandleAddProperty}
+        handleFieldChange={mockHandleFieldChange}
+      />
+    );
+    const bedrooms = getByLabelText("Bedrooms");
+
+    fireEvent.change(bedrooms, {
+      target: { value: "4" },
+    });
+
+    expect(bedrooms.value).toBe("4");
+  });
+
+  it("submits the bathrooms input", () => {
+    const { getByLabelText } = render(
+      <AddProperty
+        mockHandleAddProperty={mockHandleAddProperty}
+        handleFieldChange={mockHandleFieldChange}
+      />
+    );
+    const bathrooms = getByLabelText("Bathrooms");
+
+    fireEvent.change(bathrooms, {
+      target: { value: "3" },
+    });
+
+    expect(bathrooms.value).toBe("3");
+  });
+
+  it("submits the price input", () => {
+    const { getByLabelText } = render(
+      <AddProperty
+        mockHandleAddProperty={mockHandleAddProperty}
+        handleFieldChange={mockHandleFieldChange}
+      />
+    );
+    const price = getByLabelText("Price (£)");
 
     fireEvent.change(price, {
-      target: { value: "10000" },
+      target: { value: "1000" },
     });
-    fireEvent.click(button);
 
-    expect(price.value).toBe("10000");
+    expect(price.value).toBe("1000");
   });
 
-  it("captures user email input correctly", () => {
-    const { getByRole, getByTestId } = render(<AddProperty />);
-    const email = getByTestId("email-id");
-    const button = getByRole("button", { name: /add/i });
+  it("submits the email input", () => {
+    const { getByLabelText } = render(
+      <AddProperty
+        mockHandleAddProperty={mockHandleAddProperty}
+        handleFieldChange={mockHandleFieldChange}
+      />
+    );
+    const email = getByLabelText("Email");
 
     fireEvent.change(email, {
-      target: { value: "sofia-dionisio@mail.com" },
+      target: { value: "john@mail.com" },
     });
-    fireEvent.click(button);
 
-    expect(email.value).toBe("sofia-dionisio@mail.com");
+    expect(email.value).toBe("john@mail.com");
   });
 });

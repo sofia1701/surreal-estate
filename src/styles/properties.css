@@ -1,0 +1,43 @@
+.property-card {
+  padding: 10px;
+  width: 100%;
+  background-color: rgb(245, 234, 239);
+  text-align: center;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 1rem;
+}
+
+.card {
+  background-color: white;
+  margin: 3px;
+  padding: 8px;
+}
+
+.house-logo {
+  width: 30px;
+  height: 30px;
+}
+
+.mail-button {
+  background-color: rgb(93, 9, 104);
+  
+}
+
+.mail-button-text {
+  color: white;
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 961px) {
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    grid-gap: 1rem;
+  }
+}
