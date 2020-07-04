@@ -22,6 +22,34 @@ describe("AddProperty", () => {
     expect(title.value).toBe("3 bedroom flat");
   });
 
+  it("captures user selected city correctly", () => {
+    const { getByRole, getByTestId } = render(<AddProperty />);
+
+    const city = getByTestId("select-city-id");
+    const button = getByRole("button", { name: /add/i });
+
+    fireEvent.change(city, {
+      target: { value: "Liverpool" },
+    });
+    fireEvent.click(button);
+
+    expect(city.value).toBe("Liverpool");
+  });
+
+  it("captures user selected type correctly", () => {
+    const { getByRole, getByTestId } = render(<AddProperty />);
+
+    const type = getByTestId("select-type-id");
+    const button = getByRole("button", { name: /add/i });
+
+    fireEvent.change(type, {
+      target: { value: "Flat" },
+    });
+    fireEvent.click(button);
+
+    expect(type.value).toBe("Flat");
+  });
+
   it("captures user price input correctly", () => {
     const { getByRole, getByTestId } = render(<AddProperty />);
     const price = getByTestId("price-id");
