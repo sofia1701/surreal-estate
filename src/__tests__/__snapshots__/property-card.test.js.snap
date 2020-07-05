@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PropertyCard renders correctly 1`] = `
+<DocumentFragment>
+  <div>
+    <div>
+      <img
+        alt="logo"
+        class="house-logo"
+        data-testid="house-logo-id"
+        src="house-logo.png"
+      />
+    </div>
+    <div
+      class="title-city"
+    >
+      5 Bedroom House, Leeds
+    </div>
+    <div
+      class="type-select"
+    >
+      Detached
+    </div>
+    <div
+      class="bathroom-number"
+    >
+      3
+    </div>
+    <div
+      class="bedroom-number"
+    >
+      5
+    </div>
+    <div
+      class="price"
+    >
+      650 £
+    </div>
+    <div
+      class="mail-button"
+    >
+      <a
+        class="mail-button-text"
+        href="mailto:john@mail.com"
+      >
+        Email
+      </a>
+    </div>
+  </div>
+</DocumentFragment>
+`;

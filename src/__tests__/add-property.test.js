@@ -33,8 +33,6 @@ describe("AddProperty", () => {
       <AddProperty
         mockHandleAddProperty={mockHandleAddProperty}
         handleFieldChange={mockHandleFieldChange}
-        title={mockFormData.title}
-        city={mockFormData.city}
       />
     );
 

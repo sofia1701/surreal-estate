@@ -22,13 +22,15 @@ export default function PropertyCard({
         />
       </div>
 
-      <div>{`${title}, ${city}`}</div>
-      <div>{type}</div>
-      <div>{bathrooms}</div>
-      <div>{bedrooms}</div>
-      <div>{`${price} £`}</div>
+      <div className="title-city">{`${title}, ${city}`}</div>
+      <div className="type-select">{type}</div>
+      <div className="bathroom-number">{bathrooms}</div>
+      <div className="bedroom-number">{bedrooms}</div>
+      <div className="price">{`${price} £`}</div>
       <div className="mail-button">
-        <a className="mail-button-text" href={`mailto:${email}`}>Email</a>
+        <a className="mail-button-text" href={`mailto:${email}`}>
+          Email
+        </a>
       </div>
     </div>
   );

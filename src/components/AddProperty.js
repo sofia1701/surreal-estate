@@ -32,14 +32,14 @@ export default function AddProperty() {
         ...fields,
       })
       .then((response) => {
-        //console.log(response);
+        console.log(response);
         setAlert({
           message: "Property added.",
           isSuccess: true,
         });
       })
       .catch((error) => {
-        //console.log(error);
+        console.log(error);
         setAlert({
           message: "Server error. Please try again later.",
           isSuccess: false,
