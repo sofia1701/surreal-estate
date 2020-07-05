@@ -18,14 +18,38 @@
   padding: 8px;
 }
 
+.logo-background {
+  background-color: rgb(245, 234, 239);
+}
+
 .house-logo {
-  width: 30px;
-  height: 30px;
+  font-size: 25px;
+  color: rgb(93, 9, 104);
+}
+
+.title-city {
+  margin-top: 4px;
+  font-weight: bold;
+}
+
+.type-select {
+  font-style: italic;
+  margin-bottom: 4px;
+}
+
+.bathroom-number, .bedroom-number {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.price {
+  margin-top: 4px;
+  margin-bottom: 4px;
 }
 
 .mail-button {
   background-color: rgb(93, 9, 104);
-  
 }
 
 .mail-button-text {

@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import houseLogo from "./house-logo.png";
+import { FaBed, FaBath, FaFortAwesome } from "react-icons/fa";
 
 export default function PropertyCard({
   title,
@@ -13,19 +13,20 @@ export default function PropertyCard({
 }) {
   return (
     <div>
-      <div>
-        <img
-          data-testid="house-logo-id"
-          className="house-logo"
-          alt="logo"
-          src={houseLogo}
-        />
+      <div className="logo-background">
+        <FaFortAwesome className="house-logo" data-testid="house-logo-id" />
       </div>
 
       <div className="title-city">{`${title}, ${city}`}</div>
       <div className="type-select">{type}</div>
-      <div className="bathroom-number">{bathrooms}</div>
-      <div className="bedroom-number">{bedrooms}</div>
+      <div className="bathroom-number">
+        <FaBath />
+        {bathrooms}
+      </div>
+      <div className="bedroom-number">
+        <FaBed />
+        {bedrooms}
+      </div>
       <div className="price">{`${price} £`}</div>
       <div className="mail-button">
         <a className="mail-button-text" href={`mailto:${email}`}>

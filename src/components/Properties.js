@@ -19,7 +19,7 @@ export default function Properties() {
 
   return (
     <div className="property-card">
-      <p className="page-title">Properties</p>
+      <h3 className="page-title">Properties</h3>
       <div className="cards">
         {properties.map((property) => (
           <div className="card" key={property._id}>
