@@ -32,6 +32,7 @@ export default function AddProperty() {
         ...fields,
       })
       .then((response) => {
+        // eslint-disable-next-line no-console
         console.log(response);
         setAlert({
           message: "Property added.",
@@ -39,6 +40,7 @@ export default function AddProperty() {
         });
       })
       .catch((error) => {
+        // eslint-disable-next-line no-console
         console.log(error);
         setAlert({
           message: "Server error. Please try again later.",

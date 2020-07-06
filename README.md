@@ -35,6 +35,9 @@ Jest
 
 Axios<br />
 PropTypes<br />
+Airbnb style guide<br />
+react-router-dom
+
 
 ### In the project directory, you can run:
 

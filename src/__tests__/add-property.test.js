@@ -1,5 +1,5 @@
 import React from "react";
-import { render, fireEvent, wait } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
 import AddProperty from "../components/AddProperty";
 
 describe("AddProperty", () => {
@@ -15,7 +15,7 @@ describe("AddProperty", () => {
     email: "john@mail.com",
   };
 
-  it("renders correctly", async () => {
+  it("renders correctly", () => {
     const { asFragment } = render(
       <AddProperty
         handleAddProperty={mockHandleAddProperty}
@@ -23,9 +23,8 @@ describe("AddProperty", () => {
         form={mockFormData}
       />
     );
-    await wait(() => {
-      expect(asFragment()).toMatchSnapshot();
-    });
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("submits the title input", () => {
