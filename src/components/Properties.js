@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import axios from "axios";
 import PropertyCard from "./PropertyCard";
 import Alert from "./Alert";
@@ -24,6 +25,16 @@ export default function Properties() {
         });
       });
   }, []);
+
+  const { search } = useLocation();
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:4000/api/v1/PropertyListing${search}`)
+      .then((response) => {
+        setProperties(response.data);
+      });
+  }, [search]);
 
   return (
     <>

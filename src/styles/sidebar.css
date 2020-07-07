@@ -2,6 +2,9 @@
   grid-column: 1 / 4;
   grid-row: 3 / 4;
 }
+.sidebar-title {
+  font-weight: bold;
+}
 .items {
   justify-content: space-between;
   display: flex;
