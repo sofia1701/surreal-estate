@@ -3,24 +3,29 @@
 exports[`Navbar renders correctly 1`] = `
 <DocumentFragment>
   <div
-    class="navbar"
+    class="logo-container"
   >
     <a
+      class="logo"
       href="/"
     >
       <img
         alt="logo"
-        class="logo"
+        class="logo-img"
         data-testid="logo-id"
         src="nav-logo.png"
       />
     </a>
+  </div>
+  <div
+    class="navbar"
+  >
     <ul
-      class="navbar-links"
+      class="menu"
     >
       <li>
         <a
-          class="navbar-links-item"
+          class="item"
           data-testid="view-properties-id"
           href="/"
         >
@@ -29,7 +34,7 @@ exports[`Navbar renders correctly 1`] = `
       </li>
       <li>
         <a
-          class="navbar-links-item"
+          class="item"
           data-testid="add-property-id"
           href="/add-property"
         >

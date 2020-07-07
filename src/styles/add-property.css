@@ -1,17 +1,24 @@
 .add-property {
-  padding: 10px;
-  width: 100%;
-  background-color:  rgb(245, 234, 239);
+  grid-column: 1 / 4;
+  grid-row: 3 / 4;
+  padding: 20px;
+  background-image: url("real-estate.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: grid;
 }
 
 .form-add-property {
   display: flex;
   flex-direction: column;
+  background-color: rgb(245, 234, 239);
 }
 
 label {
   margin-top: 10px;
   display: grid;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .button {
@@ -27,14 +34,25 @@ label {
   padding: 5px;
 }
 
+.add-button:hover {
+  background-color: #d0b0e2;
+  color: black;
+}
+
 @media only screen and (min-width: 961px) {
-  .input-title {
+  .add-property {
+    grid-row: 2 / 3;
+  }
+  .form-add-property {
     width: 40%;
+  }
+  .input-title {
+    width: 60%;
     margin: 3px
   }
   
   .input-city {
-    width: 15%;
+    width: 25%;
     margin: 3px
   }
   
@@ -54,12 +72,12 @@ label {
   }
   
   .input-price {
-    width: 20%;
+    width: 25%;
     margin: 3px
   }
   
   .input-email {
-    width: 40%;
+    width: 60%;
     margin: 3px
   }
 

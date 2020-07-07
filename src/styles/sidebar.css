@@ -1,0 +1,34 @@
+.sidebar {
+  grid-column: 1 / 4;
+  grid-row: 3 / 4;
+}
+.items {
+  justify-content: space-between;
+  display: flex;
+}
+.side-item {
+  text-decoration: none;
+  color: black;
+}
+
+.side-item:hover {
+  color: #928583;
+}
+
+@media only screen and (min-width: 961px) {
+  .sidebar {
+    padding: 20px;
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+  }
+
+  .items {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .side-item {
+    text-decoration: none;
+    color: black;
+  }
+}

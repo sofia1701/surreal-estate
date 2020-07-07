@@ -5,30 +5,35 @@ import "../styles/navbar.css";
 
 export default function Navbar() {
   return (
-    <div className="navbar">
-      <Link to="/">
-        <img data-testid="logo-id" className="logo" alt="logo" src={logo} />
-      </Link>
-      <ul className="navbar-links">
-        <li>
-          <Link
-            to="/"
-            className="navbar-links-item"
-            data-testid="view-properties-id"
-          >
-            View Properties
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/add-property"
-            className="navbar-links-item"
-            data-testid="add-property-id"
-          >
-            Add a Property
-          </Link>
-        </li>
-      </ul>
-    </div>
+    <>
+      <div className="logo-container">
+        <Link to="/" className="logo">
+          <img
+            data-testid="logo-id"
+            className="logo-img"
+            alt="logo"
+            src={logo}
+          />
+        </Link>
+      </div>
+      <div className="navbar">
+        <ul className="menu">
+          <li>
+            <Link to="/" className="item" data-testid="view-properties-id">
+              View Properties
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/add-property"
+              className="item"
+              data-testid="add-property-id"
+            >
+              Add a Property
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </>
   );
 }

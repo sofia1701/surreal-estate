@@ -1,22 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Raleway', sans-serif;
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
   color: #12100E;
   background-color:white;
 }
 
 .app {
-  display: flex;
-  flex-wrap: wrap;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 200px 4fr 1fr;
+  grid-gap: 10px;
+  min-height: 10vh;
   background-color: white;
   
 }
 
 @media only screen and (min-width: 961px) {
   .app {
-    width: 970px;
-    margin: 0 auto;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 200px 1fr 100px;
+    grid-template-rows: 100px 1fr 80px;
+    grid-gap: 10px;
+    min-height: 100vh;
+    background-color: white;
+    
   }
 }

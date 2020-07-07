@@ -1,21 +1,24 @@
 .property-card {
-  padding: 10px;
-  width: 100%;
-  background-color: rgb(245, 234, 239);
-  text-align: center;
+  grid-column: 1 / 4;
+  grid-row: 4 / 5;
+  padding: 20px;
+  background-image: url("real-estate.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .cards {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  grid-auto-rows: auto;
-  grid-gap: 1rem;
+  grid-auto-rows: 200px;
+  grid-gap: 10px;
+  padding: 20px;
 }
 
 .card {
   background-color: white;
-  margin: 3px;
-  padding: 8px;
+  text-align: center;
+  padding: 10px;
 }
 
 .logo-background {
@@ -37,7 +40,8 @@
   margin-bottom: 4px;
 }
 
-.bathroom-number, .bedroom-number {
+.bathroom-number,
+.bedroom-number {
   justify-content: center;
   display: flex;
   align-items: center;
@@ -63,10 +67,11 @@
 }
 
 @media only screen and (min-width: 961px) {
+  .property-card {
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+  }
   .cards {
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: auto;
-    grid-gap: 1rem;
   }
 }
