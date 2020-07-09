@@ -1,17 +1,22 @@
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useLocation, useHistory } from "react-router-dom";
 import qs from "qs";
 import "../styles/sidebar.css";
+import { FaSearch } from "react-icons/fa";
 
 export default function Sidebar() {
   const { search } = useLocation();
+  const history = useHistory();
 
   const buildQueryString = (operation, valueObj) => {
     const currentQueryParams = qs.parse(search, { ignoreQueryPrefix: true });
 
     const newQueryParams = {
       ...currentQueryParams,
-      [operation]: JSON.stringify(valueObj),
+      [operation]: JSON.stringify({
+        ...JSON.parse(currentQueryParams[operation] || "{}"),
+        ...valueObj,
+      }),
     };
 
     return qs.stringify(newQueryParams, {
@@ -20,8 +25,30 @@ export default function Sidebar() {
     });
   };
 
+  const [query, setQuery] = useState("");
+
+  const handleSearch = (event) => {
+    event.preventDefault();
+    const newQueryString = buildQueryString("query", {
+      title: { $regex: query },
+    });
+    history.push(newQueryString);
+  };
+
   return (
     <div className="sidebar">
+      <form className="sidebar-form" onSubmit={handleSearch}>
+        <input
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          className="search-input"
+          placeholder="Search..."
+        />
+        <button type="submit" className="search-button">
+          <FaSearch className="search-logo" />
+        </button>
+      </form>
       <p className="sidebar-title">Filter by city</p>
       <div className="items">
         <Link

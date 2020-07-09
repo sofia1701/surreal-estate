@@ -33,6 +33,10 @@ export default function Properties() {
       .get(`http://localhost:4000/api/v1/PropertyListing${search}`)
       .then((response) => {
         setProperties(response.data);
+      })
+      .catch((err) => {
+        // eslint-disable-next-line no-console
+        console.log(err);
       });
   }, [search]);
 
