@@ -37,7 +37,8 @@ Axios<br />
 PropTypes<br />
 Airbnb style guide<br />
 react-router-dom<br />
-qs
+qs<br />
+react-facebook-login
 
 
 ### In the project directory, you can run:

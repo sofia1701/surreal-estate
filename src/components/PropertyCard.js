@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { FaBed, FaBath, FaFortAwesome } from "react-icons/fa";
+import { FaBed, FaBath, FaFortAwesome, FaEnvelope } from "react-icons/fa";
 
 export default function PropertyCard({
   title,
@@ -30,6 +30,7 @@ export default function PropertyCard({
       <div className="price">{`${price} £`}</div>
       <div className="mail-button">
         <a className="mail-button-text" href={`mailto:${email}`}>
+          <FaEnvelope />
           Email
         </a>
       </div>
