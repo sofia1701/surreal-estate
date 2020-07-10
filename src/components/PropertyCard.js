@@ -1,8 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { FaBed, FaBath, FaFortAwesome, FaEnvelope } from "react-icons/fa";
+import {
+  FaBed,
+  FaBath,
+  FaFortAwesome,
+  FaEnvelope,
+  FaHeart,
+} from "react-icons/fa";
 
 export default function PropertyCard({
+  _id,
   title,
   type,
   bathrooms,
@@ -10,6 +17,8 @@ export default function PropertyCard({
   price,
   city,
   email,
+  userID,
+  onSaveProperty,
 }) {
   return (
     <div>
@@ -28,6 +37,15 @@ export default function PropertyCard({
         {bedrooms}
       </div>
       <div className="price">{`${price} £`}</div>
+      {userID ? (
+        <button
+          onClick={() => onSaveProperty(_id)}
+          className="save-button"
+          type="button"
+        >
+          <FaHeart className="save-logo" />
+        </button>
+      ) : null}
       <div className="mail-button">
         <a className="mail-button-text" href={`mailto:${email}`}>
           <FaEnvelope />
@@ -46,4 +64,7 @@ PropertyCard.propTypes = {
   bedrooms: PropTypes.number.isRequired,
   price: PropTypes.number.isRequired,
   email: PropTypes.string.isRequired,
+  userID: PropTypes.string.isRequired,
+  onSaveProperty: PropTypes.func.isRequired,
+  _id: PropTypes.string.isRequired,
 };

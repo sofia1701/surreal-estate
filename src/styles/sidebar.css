@@ -40,6 +40,10 @@
   display: flex;
 }
 
+.search-button:hover {
+  opacity: 0.7;
+}
+
 .search-logo {
   color: white;
 }

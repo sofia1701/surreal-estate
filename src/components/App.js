@@ -39,7 +39,11 @@ function App() {
         name={fields.name}
       />
       <Switch>
-        <Route exact path="/" component={Properties} />
+        <Route
+          exact
+          path="/"
+          render={(props) => <Properties {...props} userID={fields.userID} />}
+        />
         <Route exact path="/add-property" component={AddProperty} />
       </Switch>
     </div>

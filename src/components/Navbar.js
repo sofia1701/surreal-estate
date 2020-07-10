@@ -47,7 +47,7 @@ export default function Navbar({ onLogin, userID, picture, onLogout, name }) {
             <br />
             {name}
             <br />
-            Log Out
+            Sign Out
             <img src={picture} alt="profile" />
           </button>
         ) : (
@@ -68,4 +68,6 @@ Navbar.propTypes = {
   onLogin: PropTypes.func.isRequired,
   userID: PropTypes.string.isRequired,
   onLogout: PropTypes.func.isRequired,
+  picture: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
 };

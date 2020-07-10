@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
+import PropTypes from "prop-types";
 import PropertyCard from "./PropertyCard";
 import Alert from "./Alert";
 import Sidebar from "./Sidebar";
 import "../styles/properties.css";
 
-export default function Properties() {
+export default function Properties({ userID }) {
   const [properties, setProperties] = useState([]);
   const [alert, setAlert] = useState({ message: "", isSuccess: false });
 
@@ -40,6 +41,28 @@ export default function Properties() {
       });
   }, [search]);
 
+  const handleSaveProperty = (propertyId) => {
+    axios
+      .post("http://localhost:4000/api/v1/Favourite", {
+        propertyListing: propertyId,
+        fbUserId: userID,
+      })
+      .then(() => {
+        // eslint-disable-next-line no-console
+        setAlert({
+          message: "Property saved in favourites.",
+          isSuccess: true,
+        });
+      })
+      .catch(() => {
+        // eslint-disable-next-line no-console
+        setAlert({
+          message: "Server error. Please try again later.",
+          isSuccess: false,
+        });
+      });
+  };
+
   return (
     <>
       <Sidebar />
@@ -49,6 +72,7 @@ export default function Properties() {
           {properties.map((property) => (
             <div className="card" key={property._id}>
               <PropertyCard
+                _id={property._id}
                 title={property.title}
                 city={property.city}
                 type={property.type}
@@ -56,6 +80,8 @@ export default function Properties() {
                 bedrooms={property.bedrooms}
                 price={property.price}
                 email={property.email}
+                userID={userID}
+                onSaveProperty={handleSaveProperty}
               />
             </div>
           ))}
@@ -64,3 +90,7 @@ export default function Properties() {
     </>
   );
 }
+
+Properties.propTypes = {
+  userID: PropTypes.string.isRequired,
+};
