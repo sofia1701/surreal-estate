@@ -1,7 +1,7 @@
 .favourites {
   grid-column: 1 / 4;
   grid-row: 3 / 4;
-  background-image: url("real-estate.jpeg");
+  background-image: url("images/real-estate.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
 }

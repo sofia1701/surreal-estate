@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import FacebookLogin from "react-facebook-login";
 import PropTypes from "prop-types";
-import logo from "../styles/nav-logo.png";
+import logo from "../styles/images/nav-logo.png";
 import "../styles/navbar.css";
 
 export default function Navbar({ onLogin, userID, picture, onLogout, name }) {

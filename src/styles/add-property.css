@@ -2,7 +2,7 @@
   grid-column: 1 / 4;
   grid-row: 3 / 4;
   padding: 10px;
-  background-image: url("real-estate1.jpg");
+  background-image: url("images/real-estate1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   display: grid;
