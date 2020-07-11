@@ -5,6 +5,7 @@ import Properties from "./Properties";
 import AddProperty from "./AddProperty";
 import Homepage from "./Homepage";
 import Footer from "./Footer";
+import Favourites from "./Favourites";
 import "../styles/App.css";
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
           render={(props) => <Properties {...props} userID={fields.userID} />}
         />
         <Route exact path="/add-property" component={AddProperty} />
+        <Route exact path="/favourites" component={Favourites} />
       </Switch>
       <Footer />
     </div>

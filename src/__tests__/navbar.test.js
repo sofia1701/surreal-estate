@@ -4,10 +4,22 @@ import { MemoryRouter } from "react-router-dom";
 import Navbar from "../components/Navbar";
 
 describe("Navbar", () => {
+  const mockFacebookLogin = jest.fn();
+  const mockLoginData = {
+    userID: "userID",
+    picture: "picture",
+    email: "email",
+    name: "name",
+  };
+
   it("renders correctly", () => {
     const { asFragment } = render(
       <MemoryRouter>
-        <Navbar />
+        <Navbar
+          {...mockLoginData}
+          onLogin={mockFacebookLogin}
+          onLogout={mockFacebookLogin}
+        />
       </MemoryRouter>
     );
     expect(asFragment()).toMatchSnapshot();
@@ -16,7 +28,11 @@ describe("Navbar", () => {
   it("renders the correct specs", () => {
     const { getByTestId } = render(
       <MemoryRouter>
-        <Navbar />
+        <Navbar
+          {...mockLoginData}
+          onLogin={mockFacebookLogin}
+          onLogout={mockFacebookLogin}
+        />
       </MemoryRouter>
     );
     const logo = getByTestId("logo-id");
@@ -26,6 +42,9 @@ describe("Navbar", () => {
     expect(viewProperties).toHaveTextContent("View Properties");
 
     const addProperty = getByTestId("add-property-id");
-    expect(addProperty).toHaveTextContent("Add a Property");
+    expect(addProperty).toHaveTextContent("Add Property");
+
+    const favourites = getByTestId("favourites-id");
+    expect(favourites).toHaveTextContent("Favourites");
   });
 });

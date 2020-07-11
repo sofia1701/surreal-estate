@@ -38,6 +38,11 @@ export default function Navbar({ onLogin, userID, picture, onLogout, name }) {
               Add Property
             </Link>
           </li>
+          <li>
+            <Link to="/favourites" className="item" data-testid="favourites-id">
+              Favourites
+            </Link>
+          </li>
         </ul>
       </div>
       <div className="facebook-container">

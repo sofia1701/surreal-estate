@@ -11,6 +11,9 @@ describe("PropertyCard", () => {
     bathrooms: 3,
     price: 650,
     email: "john@mail.com",
+    userID: "54321",
+    _id: "12345",
+    onSaveProperty: jest.fn(),
   };
   it("renders correctly", () => {
     const { asFragment } = render(<PropertyCard {...mockFormData} />);

@@ -27,7 +27,7 @@ exports[`Navbar renders correctly 1`] = `
         <a
           class="item"
           data-testid="view-properties-id"
-          href="/"
+          href="/properties"
         >
           View Properties
         </a>
@@ -38,10 +38,37 @@ exports[`Navbar renders correctly 1`] = `
           data-testid="add-property-id"
           href="/add-property"
         >
-          Add a Property
+          Add Property
+        </a>
+      </li>
+      <li>
+        <a
+          class="item"
+          data-testid="favourites-id"
+          href="/favourites"
+        >
+          Favourites
         </a>
       </li>
     </ul>
+  </div>
+  <div
+    class="facebook-container"
+  >
+    <button
+      class="my-facebook-button-class"
+      type="submit"
+    >
+      Welcome,
+      <br />
+      name
+      <br />
+      Sign Out
+      <img
+        alt="profile"
+        src="picture"
+      />
+    </button>
   </div>
 </DocumentFragment>
 `;
