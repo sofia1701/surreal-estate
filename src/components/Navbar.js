@@ -35,7 +35,7 @@ export default function Navbar({ onLogin, userID, picture, onLogout, name }) {
               className="item"
               data-testid="add-property-id"
             >
-              Add a Property
+              Add Property
             </Link>
           </li>
         </ul>

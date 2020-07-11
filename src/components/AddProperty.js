@@ -85,74 +85,79 @@ export default function AddProperty() {
             onChange={handleFieldChange}
           />
         </label>
-        <label htmlFor="city">
-          City
-          <select
-            data-testid="select-city-id"
-            className="input-city"
-            id="city"
-            name="city"
-            value={fields.city}
-            onChange={handleFieldChange}
-          >
-            <option value="Manchester">Manchester</option>
-            <option value="Leeds">Leeds</option>
-            <option value="Sheffield">Sheffield</option>
-            <option value="Liverpool">Liverpool</option>
-          </select>
-        </label>
-        <label htmlFor="type">
-          Type
-          <select
-            data-testid="select-type-id"
-            className="input-type"
-            id="type"
-            name="type"
-            value={fields.type}
-            onChange={handleFieldChange}
-          >
-            <option value="Flat">Flat</option>
-            <option value="Detached">Detached</option>
-            <option value="Semi-Detached">Semi-Detached</option>
-            <option value="Terraced">Terraced</option>
-            <option value="End of Terraced">End of Terraced</option>
-            <option value="Cottage">Cottage</option>
-            <option value="Bungalow">Bungalow</option>
-          </select>
-        </label>
-        <label htmlFor="bedrooms">
-          Bedrooms
-          <select
-            data-testid="select-bedroom-id"
-            className="input-bedrooms"
-            id="bedrooms"
-            name="bedrooms"
-            value={fields.bedrooms}
-            onChange={handleFieldChange}
-          >
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5+">5+</option>
-          </select>
-        </label>
-        <label htmlFor="bathrooms">
-          Bathrooms
-          <select
-            data-testid="select-bathrooms-id"
-            className="input-bathrooms"
-            id="bathrooms"
-            name="bathrooms"
-            value={fields.bathrooms}
-            onChange={handleFieldChange}
-          >
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4+">4+</option>
-          </select>
-        </label>
+        <div className="select-fields">
+          <label htmlFor="city">
+            City
+            <select
+              data-testid="select-city-id"
+              className="input-city"
+              id="city"
+              name="city"
+              value={fields.city}
+              onChange={handleFieldChange}
+            >
+              <option value="Manchester">Manchester</option>
+              <option value="Leeds">Leeds</option>
+              <option value="Sheffield">Sheffield</option>
+              <option value="Liverpool">Liverpool</option>
+            </select>
+          </label>
+          <label htmlFor="type">
+            Type
+            <select
+              data-testid="select-type-id"
+              className="input-type"
+              id="type"
+              name="type"
+              value={fields.type}
+              onChange={handleFieldChange}
+            >
+              <option value="Flat">Flat</option>
+              <option value="Detached">Detached</option>
+              <option value="Semi-Detached">Semi-Detached</option>
+              <option value="Terraced">Terraced</option>
+              <option value="End of Terraced">End of Terraced</option>
+              <option value="Cottage">Cottage</option>
+              <option value="Bungalow">Bungalow</option>
+            </select>
+          </label>
+        </div>
+        <div className="select-fields">
+          <label htmlFor="bedrooms">
+            Bedrooms
+            <select
+              data-testid="select-bedroom-id"
+              className="input-bedrooms"
+              id="bedrooms"
+              name="bedrooms"
+              value={fields.bedrooms}
+              onChange={handleFieldChange}
+            >
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5+">5+</option>
+            </select>
+          </label>
+          <label htmlFor="bathrooms">
+            Bathrooms
+            <select
+              data-testid="select-bathrooms-id"
+              className="input-bathrooms"
+              id="bathrooms"
+              name="bathrooms"
+              value={fields.bathrooms}
+              onChange={handleFieldChange}
+            >
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4+">4+</option>
+            </select>
+          </label>
+        </div>
+
         <label htmlFor="price">
           Price (£)
           <input
