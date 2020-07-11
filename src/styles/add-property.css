@@ -1,7 +1,7 @@
 .add-property {
   grid-column: 1 / 4;
   grid-row: 3 / 4;
-  padding: 20px;
+  padding: 10px;
   background-image: url("real-estate.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -46,6 +46,7 @@ label {
 @media only screen and (min-width: 961px) {
   .add-property {
     grid-row: 2 / 3;
+    padding: 20px;
   }
   .form-add-property {
     width: 60%;
@@ -60,7 +61,7 @@ label {
     width: 60%;
   }
 
-  .input-title {
+  .input-title, .input-email {
     width: 40%;
     margin: 3px;
   }
@@ -72,22 +73,12 @@ label {
     margin: 3px;
   }
 
-  .input-price {
+  .input-price, .add-button {
     width: 15%;
-    margin: 3px;
-  }
-
-  .input-email {
-    width: 40%;
     margin: 3px;
   }
 
   .button {
     text-align: left;
-  }
-
-  .add-button {
-    margin: 3px;
-    width: 15%;
   }
 }

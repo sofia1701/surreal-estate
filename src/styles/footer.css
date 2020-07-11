@@ -1,0 +1,15 @@
+.footer {
+  grid-column: 1 / 4;
+  grid-row: 5 / 6;
+  background-color: rgb(245, 234, 239);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 961px) {
+  .footer {
+    grid-column: 1 / 4;
+    grid-row: 3 / 4;
+  }
+}

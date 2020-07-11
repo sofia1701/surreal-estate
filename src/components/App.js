@@ -4,6 +4,7 @@ import Navbar from "./Navbar";
 import Properties from "./Properties";
 import AddProperty from "./AddProperty";
 import Homepage from "./Homepage";
+import Footer from "./Footer";
 import "../styles/App.css";
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
         />
         <Route exact path="/add-property" component={AddProperty} />
       </Switch>
+      <Footer />
     </div>
   );
 }
