@@ -56,7 +56,7 @@ export default function Navbar({ onLogin, userID, picture, onLogout, name }) {
             fields="name,email,picture"
             callback={onLogin}
             cssClass="my-facebook-button-class"
-            style={{ width: "100%" }}
+            
           />
         )}
       </div>

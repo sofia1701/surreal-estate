@@ -48,14 +48,22 @@ export default function Properties({ userID }) {
         fbUserId: userID,
       })
       .then(() => {
-        // eslint-disable-next-line no-console
         setAlert({
           message: "Property saved in favourites.",
           isSuccess: true,
         });
       })
+      .then(() => {
+        setTimeout(
+          () =>
+            setAlert({
+              message: "",
+              isSuccess: false,
+            }),
+          3000
+        );
+      })
       .catch(() => {
-        // eslint-disable-next-line no-console
         setAlert({
           message: "Server error. Please try again later.",
           isSuccess: false,

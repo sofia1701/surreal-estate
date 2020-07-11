@@ -39,6 +39,16 @@ export default function AddProperty() {
           isSuccess: true,
         });
       })
+      .then(() => {
+        setTimeout(
+          () =>
+            setAlert({
+              message: "",
+              isSuccess: false,
+            }),
+          3000
+        );
+      })
       .catch((error) => {
         // eslint-disable-next-line no-console
         console.log(error);
