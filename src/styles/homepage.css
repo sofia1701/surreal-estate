@@ -1,0 +1,28 @@
+.homepage {
+  grid-column: 1 / 4;
+  grid-row: 3 / 4;
+  padding: 10px;
+  background-image: url("real-estate.jpg");
+  background-size: cover;
+  display: grid;
+  align-items: center;
+  height: 400px;
+  margin-top: 20px;
+}
+
+.homepage-contents {
+  background-color: rgb(245, 234, 239);
+  padding: 20px;
+}
+
+@media only screen and (min-width: 961px) {
+  .homepage {
+    grid-row: 2 / 3;
+    padding: 20px;
+    margin-top: 0px;
+  }
+  .homepage-contents {
+    padding: 20px;
+    width: 70%;
+  }
+}

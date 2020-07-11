@@ -21,7 +21,11 @@ export default function Navbar({ onLogin, userID, picture, onLogout, name }) {
       <div className="navbar">
         <ul className="menu">
           <li>
-            <Link to="/" className="item" data-testid="view-properties-id">
+            <Link
+              to="/properties"
+              className="item"
+              data-testid="view-properties-id"
+            >
               View Properties
             </Link>
           </li>
@@ -56,7 +60,6 @@ export default function Navbar({ onLogin, userID, picture, onLogout, name }) {
             fields="name,email,picture"
             callback={onLogin}
             cssClass="my-facebook-button-class"
-            
           />
         )}
       </div>

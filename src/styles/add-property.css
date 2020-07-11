@@ -14,6 +14,10 @@
   background-color: rgb(245, 234, 239);
 }
 
+.page-title {
+  text-align: center;
+}
+
 label {
   margin-top: 10px;
   display: grid;
@@ -46,6 +50,10 @@ label {
   .form-add-property {
     width: 40%;
   }
+  .page-title {
+    text-align: center;
+  }
+
   .input-title {
     width: 60%;
     margin: 3px

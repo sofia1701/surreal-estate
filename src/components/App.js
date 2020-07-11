@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import Navbar from "./Navbar";
 import Properties from "./Properties";
 import AddProperty from "./AddProperty";
+import Homepage from "./Homepage";
 import "../styles/App.css";
 
 function App() {
@@ -39,9 +40,10 @@ function App() {
         name={fields.name}
       />
       <Switch>
+        <Route exact path="/" component={Homepage} />
         <Route
           exact
-          path="/"
+          path="/properties"
           render={(props) => <Properties {...props} userID={fields.userID} />}
         />
         <Route exact path="/add-property" component={AddProperty} />
