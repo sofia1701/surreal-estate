@@ -2,9 +2,10 @@
   grid-column: 1 / 4;
   grid-row: 4 / 5;
   padding: 20px;
-  background-image: url("real-estate.jpg");
-  background-repeat: no-repeat;
+  background-image: url("real-estate.webp");
+  background-repeat: repeat;
   background-size: cover;
+  
 }
 
 .cards {
@@ -24,7 +25,8 @@
   background-color: rgb(245, 234, 239);
 }
 
-.house-logo, .save-logo {
+.house-logo,
+.save-logo {
   font-size: 25px;
   color: rgb(93, 9, 104);
 }
@@ -86,6 +88,8 @@
   .property-card {
     grid-column: 2 / 4;
     grid-row: 2 / 3;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   .cards {
     grid-template-columns: repeat(3, 1fr);

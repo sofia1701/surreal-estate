@@ -1,0 +1,14 @@
+.favourites {
+  grid-column: 1 / 4;
+  grid-row: 3 / 4;
+  background-image: url("real-estate.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media only screen and (min-width: 961px) {
+  .favourites {
+    grid-column: 1 / 4;
+    grid-row: 2 / 3;
+  }
+}

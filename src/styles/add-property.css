@@ -2,7 +2,7 @@
   grid-column: 1 / 4;
   grid-row: 3 / 4;
   padding: 10px;
-  background-image: url("real-estate.jpg");
+  background-image: url("real-estate1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   display: grid;
@@ -49,7 +49,7 @@ label {
     padding: 20px;
   }
   .form-add-property {
-    width: 60%;
+    width: 40%;
   }
   .page-title {
     margin: 10px;
@@ -62,7 +62,7 @@ label {
   }
 
   .input-title, .input-email {
-    width: 40%;
+    width: 60%;
     margin: 3px;
   }
 

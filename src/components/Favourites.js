@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import "../styles/favourites.css";
 
 function Favourites() {
   return (
-    <div>
+    <div className="favourites">
       Favourites page
     </div>
   )
 }
 
-export default Favourites
+export default Favourites;
