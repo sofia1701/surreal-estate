@@ -49,7 +49,11 @@ function App() {
           render={(props) => <Properties {...props} userID={fields.userID} />}
         />
         <Route exact path="/add-property" component={AddProperty} />
-        <Route exact path="/favourites" component={Favourites} />
+        <Route
+          exact
+          path="/favourites"
+          render={(props) => <Favourites {...props} userID={fields.userID} />}
+        />
       </Switch>
       <Footer />
     </div>
