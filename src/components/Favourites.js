@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/favourites.css";
 import axios from "axios";
+import PropTypes from "prop-types";
 import FavouriteCard from "./FavouriteCard";
 
 function Favourites({ userID }) {
@@ -33,9 +34,17 @@ function Favourites({ userID }) {
             </div>
           ))}
         </div>
-      ) : null}
+      ) : (
+        <div className="alert-login">
+          Please, login with Facebook to access your favourites.
+        </div>
+      )}
     </div>
   );
 }
+
+Favourites.propTypes = {
+  userID: PropTypes.string.isRequired,
+};
 
 export default Favourites;

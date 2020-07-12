@@ -71,7 +71,7 @@ export default function AddProperty() {
         onSubmit={handleAddProperty}
       >
         <Alert message={alert.message} success={alert.isSuccess} />
-        <h3 className="page-title">List your property below</h3>
+        <div className="page-title">List your property below</div>
         <label htmlFor="title">
           Title
           <input
