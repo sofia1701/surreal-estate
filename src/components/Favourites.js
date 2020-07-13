@@ -3,9 +3,11 @@ import "../styles/favourites.css";
 import axios from "axios";
 import PropTypes from "prop-types";
 import FavouriteCard from "./FavouriteCard";
+import Alert from "./Alert";
 
 function Favourites({ userID }) {
   const [favourites, setFavourites] = useState([]);
+  const [alert, setAlert] = useState({ message: "", isSuccess: false });
 
   useEffect(() => {
     axios
@@ -19,24 +21,48 @@ function Favourites({ userID }) {
       });
   }, []);
 
+  const handleDeleteFavourite = (_id) => {
+    axios
+      .delete(`http://localhost:4000/api/v1/Favourite/${_id}`)
+      .then(() => setFavourites(favourites.filter((fav) => fav._id !== _id)))
+      .then(() => {
+        setAlert({
+          message: "Property deleted.",
+          isSuccess: true,
+        });
+      })
+      .then(() => {
+        setTimeout(() => setAlert({ message: "", isSuccess: false }), 2000);
+      })
+      .catch(() => {
+        setAlert({
+          message: "Server error. Please try again later.",
+          isSuccess: false,
+        });
+      });
+  };
+
   return (
     <div className="favourite">
+      <Alert message={alert.message} success={alert.isSuccess} />
       {userID ? (
         <div className="favourite-cards">
           {favourites.map((favourite) => (
             <div className="favourite-card" key={favourite._id}>
               <FavouriteCard
+                _id={favourite._id}
                 title={favourite.propertyListing.title}
                 city={favourite.propertyListing.city}
                 price={favourite.propertyListing.price}
                 userID={userID}
+                deleteFavourite={handleDeleteFavourite}
               />
             </div>
           ))}
         </div>
       ) : (
         <div className="alert-login">
-          Please, login with Facebook to access your favourites.
+          Please, login with Facebook to access your Favourites.
         </div>
       )}
     </div>

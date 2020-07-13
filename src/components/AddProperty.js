@@ -46,7 +46,7 @@ export default function AddProperty() {
               message: "",
               isSuccess: false,
             }),
-          3000
+          2000
         );
       })
       .catch((error) => {

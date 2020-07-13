@@ -49,6 +49,7 @@ function App() {
           render={(props) => <Properties {...props} userID={fields.userID} />}
         />
         <Route exact path="/add-property" component={AddProperty} />
+
         <Route
           exact
           path="/favourites"

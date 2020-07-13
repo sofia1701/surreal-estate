@@ -1,7 +1,6 @@
 .property-card {
   grid-column: 1 / 4;
   grid-row: 4 / 5;
-  padding: 20px;
   background-image: url("images/real-estate.webp");
   background-repeat: repeat;
   background-size: cover;

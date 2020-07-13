@@ -60,7 +60,7 @@ export default function Properties({ userID }) {
               message: "",
               isSuccess: false,
             }),
-          3000
+          2000
         );
       })
       .catch(() => {

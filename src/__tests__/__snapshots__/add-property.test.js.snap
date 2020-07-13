@@ -10,11 +10,11 @@ exports[`AddProperty renders correctly 1`] = `
       class="form-add-property"
       data-testid="form-id"
     >
-      <h3
+      <div
         class="page-title"
       >
         List your property below
-      </h3>
+      </div>
       <label
         for="title"
       >

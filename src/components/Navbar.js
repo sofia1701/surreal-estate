@@ -76,6 +76,6 @@ Navbar.propTypes = {
   onLogin: PropTypes.func.isRequired,
   userID: PropTypes.string.isRequired,
   onLogout: PropTypes.func.isRequired,
-  picture: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
+  picture: PropTypes.string,
+  name: PropTypes.string,
 };
