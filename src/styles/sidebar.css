@@ -27,6 +27,8 @@
 .sidebar-form {
   display: flex;
   justify-content: center;
+  width: 60%;
+  margin-top: 10px;
 }
 
 .search-input {
@@ -55,6 +57,13 @@
     grid-row: 2 / 3;
     background-color: rgb(245, 234, 239);
     font-size: 15px;
+  }
+
+  .sidebar-form {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin-top: 0px;
   }
 
   .items {

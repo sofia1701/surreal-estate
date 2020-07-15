@@ -42,7 +42,12 @@ export default function Properties({ userID, favourites }) {
   }, [search]);
 
   const handleSaveProperty = (propertyId) => {
-    if (!favourites.includes(propertyId)) {
+    if (favourites.includes(propertyId)) {
+      setAlert({
+        message: "Property has already been saved as favourite.",
+        isSuccess: true,
+      });
+    } else {
       axios
         .post("http://localhost:4000/api/v1/Favourite", {
           propertyListing: propertyId,
@@ -73,11 +78,6 @@ export default function Properties({ userID, favourites }) {
             isSuccess: false,
           });
         });
-    } else {
-      setAlert({
-        message: "Property has already been saved as favourite.",
-        isSuccess: true,
-      });
     }
   };
 
