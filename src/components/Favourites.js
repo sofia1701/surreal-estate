@@ -12,7 +12,9 @@ function Favourites({ userID }) {
   useEffect(() => {
     axios
       .get("http://localhost:4000/api/v1/Favourite?populate=propertyListing")
-      .then((response) => setFavourites(response.data))
+      .then((response) => {
+        setFavourites(response.data);
+      })
       .catch((err) => {
         // eslint-disable-next-line no-console
         console.log(err);

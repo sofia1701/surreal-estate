@@ -7,7 +7,7 @@ import Alert from "./Alert";
 import Sidebar from "./Sidebar";
 import "../styles/properties.css";
 
-export default function Properties({ userID, favourites }) {
+export default function Properties({ userID }) {
   const [properties, setProperties] = useState([]);
   const [alert, setAlert] = useState({ message: "", isSuccess: false });
 
@@ -42,43 +42,33 @@ export default function Properties({ userID, favourites }) {
   }, [search]);
 
   const handleSaveProperty = (propertyId) => {
-    if (favourites.includes(propertyId)) {
-      setAlert({
-        message: "Property has already been saved as favourite.",
-        isSuccess: true,
-      });
-    } else {
-      axios
-        .post("http://localhost:4000/api/v1/Favourite", {
-          propertyListing: propertyId,
-          fbUserId: userID,
-        })
-        .then((response) => console.log(response))
-        .then(favourites.push(propertyId))
-
-        .then(() => {
-          setAlert({
-            message: "Property saved in favourites.",
-            isSuccess: true,
-          });
-        })
-        .then(() => {
-          setTimeout(
-            () =>
-              setAlert({
-                message: "",
-                isSuccess: false,
-              }),
-            2000
-          );
-        })
-        .catch(() => {
-          setAlert({
-            message: "Server error. Please try again later.",
-            isSuccess: false,
-          });
+    axios
+      .post("http://localhost:4000/api/v1/Favourite", {
+        propertyListing: propertyId,
+        fbUserId: userID,
+      })
+      .then(() => {
+        setAlert({
+          message: "Property saved in favourites.",
+          isSuccess: true,
         });
-    }
+      })
+      .then(() => {
+        setTimeout(
+          () =>
+            setAlert({
+              message: "",
+              isSuccess: false,
+            }),
+          2000
+        );
+      })
+      .catch(() => {
+        setAlert({
+          message: "Server error. Please try again later.",
+          isSuccess: false,
+        });
+      });
   };
 
   return (
@@ -111,6 +101,4 @@ export default function Properties({ userID, favourites }) {
 
 Properties.propTypes = {
   userID: PropTypes.string.isRequired,
-  // eslint-disable-next-line react/forbid-prop-types
-  favourites: PropTypes.array.isRequired,
 };
