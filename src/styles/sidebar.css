@@ -9,7 +9,6 @@
 }
 
 .items {
-  justify-content: space-around;
   display: flex;
 }
 

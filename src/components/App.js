@@ -18,7 +18,7 @@ function App() {
     },
   };
   const [fields, setFields] = useState(initialState.fields);
-  const [favourites] = useState([]);
+  const favourites = [];
 
   const handleLogin = (response) => {
     setFields({
