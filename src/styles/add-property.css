@@ -58,7 +58,7 @@ label {
 
   .select-fields {
     display: flex;
-    width: 60%;
+    width: 70%;
   }
 
   .input-title, .input-email {
@@ -74,7 +74,7 @@ label {
   }
 
   .input-price, .add-button {
-    width: 15%;
+    width: 25%;
     margin: 3px;
   }
 

@@ -18,6 +18,7 @@ function App() {
     },
   };
   const [fields, setFields] = useState(initialState.fields);
+  const [favourites] = useState([]);
 
   const handleLogin = (response) => {
     setFields({
@@ -46,7 +47,13 @@ function App() {
         <Route
           exact
           path="/properties"
-          render={(props) => <Properties {...props} userID={fields.userID} />}
+          render={(props) => (
+            <Properties
+              {...props}
+              userID={fields.userID}
+              favourites={favourites}
+            />
+          )}
         />
         <Route exact path="/add-property" component={AddProperty} />
 
