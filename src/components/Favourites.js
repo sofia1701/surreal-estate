@@ -19,12 +19,11 @@ function Favourites({ userID }) {
         // eslint-disable-next-line no-console
         console.log(err);
       });
-  }, []);
+  }, [favourites]);
 
-  const handleDeleteFavourite = (_id) => {
+  const handleDeleteFavourite = (propertyId) => {
     axios
-      .delete(`http://localhost:4000/api/v1/Favourite/${_id}`)
-      .then(() => setFavourites(favourites.filter((fav) => fav._id !== _id)))
+      .delete(`http://localhost:4000/api/v1/Favourite/${propertyId}`)
       .then(() => {
         setAlert({
           message: "Property deleted.",
