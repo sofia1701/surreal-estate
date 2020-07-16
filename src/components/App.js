@@ -12,7 +12,6 @@ function App() {
   const initialState = {
     fields: {
       userID: "",
-      picture: "",
       name: "",
       email: "",
     },
@@ -22,7 +21,6 @@ function App() {
   const handleLogin = (response) => {
     setFields({
       userID: response.userID,
-      picture: response.picture.data.url,
       name: response.name,
       email: response.email,
     });
@@ -38,7 +36,6 @@ function App() {
         onLogin={handleLogin}
         onLogout={handleLogout}
         userID={fields.userID}
-        picture={fields.picture}
         name={fields.name}
       />
       <Switch>

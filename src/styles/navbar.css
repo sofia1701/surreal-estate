@@ -1,53 +1,36 @@
-.logo-container {
-  grid-column: 1 /4;
+nav {
+  grid-column: 1 / 4;
   grid-row: 1 / 2;
-}
-
-.logo {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+}
+.logo-img {
+  width: 170px;
+  height: 35px;
+  opacity: 1;
 }
 
-.logo:hover {
+.logo-img:hover {
   opacity: 0.5;
 }
 
-.navbar {
-  grid-column: 1 / 4;
-  grid-row: 2 / 3;
-  background-color: rgb(245, 234, 239);
-  padding: 10px;
-}
-
-.menu {
+.collapsed {
   display: flex;
-  height: 100%;
+  width: 70%;
+  justify-content: space-around;
   align-items: center;
-  padding: 0;
-  margin: 0;
   list-style: none;
 }
 
 .item {
   text-decoration: none;
+  letter-spacing: 2px;
   color: black;
-  padding: 20px;
 }
 
 .item:hover {
   color: #928583;
-}
-
-.logo-img {
-  max-width: 50%;
-  opacity: 1;
-}
-
-.facebook-container {
-  grid-column: 1 / 4;
-  align-items: center;
-  display: flex;
-  justify-content: center;
 }
 
 .my-facebook-button-class {
@@ -56,7 +39,7 @@
   display: flex;
   padding: 5px;
   width: 100%;
-  height: 70px;
+  height: 60px;
   justify-content: space-evenly;
   align-items: center;
 }
@@ -65,32 +48,49 @@
   background-color: #abb6cf;
 }
 
-@media only screen and (min-width: 961px) {
-  .logo-container {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-    padding: 20px;
-    align-items: center;
-    display: grid;
-  }
+.burger {
+  display: none;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
 
-  .logo-img {
-    max-width: 100%;
-    display: block;
-    opacity: 1;
-  }
+.burger div {
+  width: 25px;
+  height: 3px;
+  margin: 5px;
+  background-color: rgb(161, 62, 179);
+}
 
-  .navbar {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-    display: block;
-    background-color: white;
-  }
-
-  .facebook-container {
-    grid-column: 3 / 4;
-    grid-row: 1 / 2;
-    align-items: center;
+@media only screen and (max-width: 400px) {
+  ul.collapsed {
     display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    overflow: hidden;
+    max-height: 0;
+    -o-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    -o-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  }
+  ul.collapsed.open {
+    overflow: hidden;
+    max-height: 92vh; /* approximate max height */
+    -o-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    -o-transition-timing-function: ease-in;
+    transition-timing-function: ease-in;
+  }
+
+  li {
+    padding-top: 10px;
+    margin: 0px 0px;
+    width: 100%;
+  }
+
+  .burger {
+    display: block;
   }
 }
