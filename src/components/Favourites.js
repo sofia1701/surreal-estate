@@ -10,20 +10,27 @@ function Favourites({ userID }) {
   const [alert, setAlert] = useState({ message: "", isSuccess: false });
 
   useEffect(() => {
+    let mounted = true;
     axios
       .get("http://localhost:4000/api/v1/Favourite?populate=propertyListing")
       .then((response) => {
-        setFavourites(response.data);
+        if (mounted) {
+          setFavourites(response.data);
+        }
       })
       .catch((err) => {
         // eslint-disable-next-line no-console
         console.log(err);
       });
-  }, [favourites]);
+    return () => {
+      mounted = false;
+    };
+  }, []);
 
-  const handleDeleteFavourite = (propertyId) => {
+  const handleDeleteFavourite = (_id) => {
     axios
-      .delete(`http://localhost:4000/api/v1/Favourite/${propertyId}`)
+      .delete(`http://localhost:4000/api/v1/Favourite/${_id}`)
+      .then(() => setFavourites(favourites.filter((fav) => fav._id !== _id)))
       .then(() => {
         setAlert({
           message: "Property deleted.",

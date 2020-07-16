@@ -93,4 +93,8 @@ nav {
   .burger {
     display: block;
   }
+
+  .my-facebook-button-class {
+    height: auto;
+  }
 }

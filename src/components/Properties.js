@@ -25,7 +25,7 @@ export default function Properties({ userID }) {
           isSuccess: false,
         });
       });
-  }, [properties]);
+  }, []);
 
   const { search } = useLocation();
 
