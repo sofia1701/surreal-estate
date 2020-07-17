@@ -6,7 +6,7 @@ Properties will come from an API created by Manchester Codes.
 
 Below , you'll find a screenshot of the app rendering both in desktop and mobile.
 
-![Screenshot]()
+![Screenshot](src/styles/images/screenshot.png)
 
 ### Concepts
 
