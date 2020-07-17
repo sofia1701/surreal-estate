@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import FacebookLogin from "react-facebook-login";
 import PropTypes from "prop-types";
-import logo from "../styles/images/nav-logo.png";
+import { FaFortAwesome } from "react-icons/fa";
 import "../styles/navbar.css";
 
 export default function Navbar({ onLogin, userID, onLogout, name }) {
@@ -15,16 +15,11 @@ export default function Navbar({ onLogin, userID, onLogout, name }) {
 
   return (
     <nav>
-      <div>
-        <Link to="/">
-          <img
-            data-testid="logo-id"
-            className="logo-img"
-            alt="logo"
-            src={logo}
-          />
-        </Link>
-      </div>
+      <Link to="/" className="logo">
+        <FaFortAwesome className="logo-img" data-testid="logo-id" />
+        <p className="logo-title">Surreal Estate</p>
+      </Link>
+
       <ul className={`collapsed ${open ? "open" : ""}`}>
         <li>
           <Link
