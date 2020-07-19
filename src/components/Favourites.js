@@ -8,19 +8,23 @@ import Alert from "./Alert";
 function Favourites({ userID }) {
   const [favourites, setFavourites] = useState([]);
   const [alert, setAlert] = useState({ message: "", isSuccess: false });
+  const [load, setLoad] = useState(false);
 
   useEffect(() => {
     let mounted = true;
     axios
-      .get("http://localhost:4000/api/v1/Favourite?populate=propertyListing")
+      .get(
+        "https://serene-ocean-88461.herokuapp.com/api/v1/Favourite?populate=propertyListing"
+      )
       .then((response) => {
         if (mounted) {
           setFavourites(response.data);
         }
+        setLoad(true);
       })
-      .catch((err) => {
+      .catch(() => {
         // eslint-disable-next-line no-console
-        console.log(err);
+        setLoad(true);
       });
     return () => {
       mounted = false;
@@ -29,7 +33,9 @@ function Favourites({ userID }) {
 
   const handleDeleteFavourite = (_id) => {
     axios
-      .delete(`http://localhost:4000/api/v1/Favourite/${_id}`)
+      .delete(
+        `https://serene-ocean-88461.herokuapp.com/api/v1/Favourite/${_id}`
+      )
       .then(() => setFavourites(favourites.filter((fav) => fav._id !== _id)))
       .then(() => {
         setAlert({
@@ -47,31 +53,33 @@ function Favourites({ userID }) {
         });
       });
   };
-
-  return (
-    <div className="favourite">
-      <Alert message={alert.message} success={alert.isSuccess} />
-      {userID ? (
-        <div className="favourite-cards">
-          {favourites.map((favourite) => (
-            <div className="favourite-card" key={favourite._id}>
-              <FavouriteCard
-                _id={favourite._id}
-                title={favourite.propertyListing.title}
-                city={favourite.propertyListing.city}
-                price={favourite.propertyListing.price}
-                deleteFavourite={handleDeleteFavourite}
-              />
-            </div>
-          ))}
-        </div>
-      ) : (
-        <div className="alert-login">
-          Please, login with Facebook to access your Favourites.
-        </div>
-      )}
-    </div>
-  );
+  if (load) {
+    return (
+      <div className="favourite">
+        <Alert message={alert.message} success={alert.isSuccess} />
+        {userID ? (
+          <div className="favourite-cards">
+            {favourites.map((favourite) => (
+              <div className="favourite-card" key={favourite._id}>
+                <FavouriteCard
+                  _id={favourite._id}
+                  title={favourite.propertyListing.title}
+                  city={favourite.propertyListing.city}
+                  price={favourite.propertyListing.price}
+                  deleteFavourite={handleDeleteFavourite}
+                />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="alert-login">
+            Please, login with Facebook to access your Favourites.
+          </div>
+        )}
+      </div>
+    );
+  }
+  return <div>Loading...</div>;
 }
 
 Favourites.propTypes = {

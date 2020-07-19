@@ -28,12 +28,11 @@ export default function AddProperty() {
     setAlert({ message: "", isSuccess: false });
 
     axios
-      .post("http://localhost:4000/api/v1/PropertyListing/", {
+      .post("https://serene-ocean-88461.herokuapp.com/api/v1/PropertyListing", {
         ...fields,
       })
-      .then((response) => {
+      .then(() => {
         // eslint-disable-next-line no-console
-        console.log(response);
         setAlert({
           message: "Property added.",
           isSuccess: true,

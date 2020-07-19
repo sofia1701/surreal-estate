@@ -10,12 +10,14 @@ import "../styles/properties.css";
 export default function Properties({ userID }) {
   const [properties, setProperties] = useState([]);
   const [alert, setAlert] = useState({ message: "", isSuccess: false });
+  const [load, setLoad] = useState(false);
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/api/v1/PropertyListing/")
+      .get("https://serene-ocean-88461.herokuapp.com/api/v1/PropertyListing")
       .then((response) => {
         setProperties(response.data);
+        setLoad(true);
       })
       .catch((err) => {
         // eslint-disable-next-line no-console
@@ -24,6 +26,7 @@ export default function Properties({ userID }) {
           message: "Server error. Please try again later.",
           isSuccess: false,
         });
+        setLoad(true);
       });
   }, []);
 
@@ -31,7 +34,9 @@ export default function Properties({ userID }) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/api/v1/PropertyListing${search}`)
+      .get(
+        `https://serene-ocean-88461.herokuapp.com/api/v1/PropertyListing${search}`
+      )
       .then((response) => {
         setProperties(response.data);
       })
@@ -43,7 +48,7 @@ export default function Properties({ userID }) {
 
   const handleSaveProperty = (propertyId) => {
     axios
-      .post("http://localhost:4000/api/v1/Favourite", {
+      .post("https://serene-ocean-88461.herokuapp.com/api/v1/Favourite", {
         propertyListing: propertyId,
         fbUserId: userID,
       })
@@ -74,27 +79,31 @@ export default function Properties({ userID }) {
   return (
     <>
       <Sidebar />
-      <div className="property-card">
-        <Alert message={alert.message} success={alert.isSuccess} />
-        <div className="cards">
-          {properties.map((property) => (
-            <div className="card" key={property._id}>
-              <PropertyCard
-                _id={property._id}
-                title={property.title}
-                city={property.city}
-                type={property.type}
-                bathrooms={property.bathrooms}
-                bedrooms={property.bedrooms}
-                price={property.price}
-                email={property.email}
-                userID={userID}
-                onSaveProperty={handleSaveProperty}
-              />
-            </div>
-          ))}
+      {load ? (
+        <div className="property-card">
+          <Alert message={alert.message} success={alert.isSuccess} />
+          <div className="cards">
+            {properties.map((property) => (
+              <div className="card" key={property._id}>
+                <PropertyCard
+                  _id={property._id}
+                  title={property.title}
+                  city={property.city}
+                  type={property.type}
+                  bathrooms={property.bathrooms}
+                  bedrooms={property.bedrooms}
+                  price={property.price}
+                  email={property.email}
+                  userID={userID}
+                  onSaveProperty={handleSaveProperty}
+                />
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      ) : (
+        <div className="loading">Loading the properties...</div>
+      )}
     </>
   );
 }

@@ -1,6 +1,6 @@
 .sidebar {
   grid-column: 1 / 4;
-  grid-row: 3 / 4;
+  grid-row: 2 / 3;
   font-size: 14px;
 }
 
@@ -26,7 +26,6 @@
 .sidebar-form {
   display: flex;
   justify-content: center;
-  width: 60%;
   margin-top: 10px;
 }
 
@@ -61,7 +60,6 @@
   .sidebar-form {
     display: flex;
     justify-content: center;
-    width: 90%;
     margin-top: 0px;
   }
 
