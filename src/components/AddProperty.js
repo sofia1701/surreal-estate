@@ -82,6 +82,7 @@ export default function AddProperty() {
             name="title"
             value={fields.title}
             onChange={handleFieldChange}
+            required
           />
         </label>
         <div className="select-fields">
@@ -168,6 +169,7 @@ export default function AddProperty() {
             name="price"
             value={fields.price}
             onChange={handleFieldChange}
+            required
           />
         </label>
         <label htmlFor="email">
@@ -181,6 +183,7 @@ export default function AddProperty() {
             name="email"
             value={fields.email}
             onChange={handleFieldChange}
+            required
           />
         </label>
         <div className="button">
