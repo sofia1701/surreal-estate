@@ -5,12 +5,17 @@ exports[`Sidebar renders correctly 1`] = `
   <div
     class="sidebar"
   >
+    <p
+      class="sidebar-title"
+    >
+      Search for a property
+    </p>
     <form
       class="sidebar-form"
     >
       <input
         class="search-input"
-        placeholder="Search..."
+        placeholder="e.g. Flat..."
         type="text"
         value=""
       />
@@ -42,6 +47,12 @@ exports[`Sidebar renders correctly 1`] = `
     <div
       class="items"
     >
+      <a
+        class="side-item"
+        href="/properties"
+      >
+        All
+      </a>
       <a
         class="side-item"
         href="/?query={\\"city\\":\\"Manchester\\"}"

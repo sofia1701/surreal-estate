@@ -37,13 +37,14 @@ export default function Sidebar() {
 
   return (
     <div className="sidebar">
+      <p className="sidebar-title">Search for a property</p>
       <form className="sidebar-form" onSubmit={handleSearch}>
         <input
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           className="search-input"
-          placeholder="Search..."
+          placeholder="e.g. Flat..."
         />
         <button type="submit" className="search-button">
           <FaSearch className="search-logo" />
@@ -51,6 +52,9 @@ export default function Sidebar() {
       </form>
       <p className="sidebar-title">Filter by city</p>
       <div className="items">
+        <Link to="/properties" className="side-item">
+          All
+        </Link>
         <Link
           to={buildQueryString("query", { city: "Manchester" })}
           className="side-item"

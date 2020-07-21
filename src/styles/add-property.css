@@ -44,6 +44,17 @@ label {
   color: black;
 }
 
+.input-title, 
+.input-email,
+.input-city,
+.input-type,
+.input-bedrooms,
+.input-bathrooms,
+.input-price, 
+.add-button {
+  height: 40px;
+}
+
 @media only screen and (min-width: 961px) {
   .add-property {
     grid-row: 2 / 3;
@@ -65,6 +76,7 @@ label {
   .input-title, .input-email {
     width: 70%;
     margin: 3px;
+    height: auto;
   }
 
   .input-city,
@@ -72,11 +84,13 @@ label {
   .input-bedrooms,
   .input-bathrooms {
     margin: 3px;
+    height: auto;
   }
 
   .input-price, .add-button {
-    width: 25%;
+    width: 30%;
     margin: 3px;
+    height: auto;
   }
 
   .button {

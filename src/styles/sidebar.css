@@ -1,7 +1,7 @@
 .sidebar {
   grid-column: 1 / 4;
   grid-row: 2 / 3;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .sidebar-title {
@@ -17,6 +17,9 @@
   color: black;
   background-color: rgb(245, 234, 239);
   padding: 5px;
+  height: 40px;
+  display: flex;
+  align-items: center;
 }
 
 .side-item:hover {
@@ -25,12 +28,12 @@
 
 .sidebar-form {
   display: flex;
-  justify-content: center;
   margin-top: 10px;
 }
 
 .search-input {
-  width: 80%;
+  width: 100%;
+  height: 40px;
 }
 
 .search-button {
@@ -50,7 +53,7 @@
 
 @media only screen and (min-width: 961px) {
   .sidebar {
-    padding: 20px;
+    padding: 10px;
     grid-column: 1 / 2;
     grid-row: 2 / 3;
     background-color: rgb(245, 234, 239);
@@ -67,4 +70,14 @@
     display: flex;
     flex-direction: column;
   }
+
+  .side-item {
+    height: auto;
+  }
+
+  .search-input {
+    width: 80%;
+    height: auto;
+  }
+  
 }
